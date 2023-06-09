@@ -1,0 +1,1 @@
+az deployment sub create --location australiaeast --template-file $(dirname $BASH_SOURCE)/main.bicep
