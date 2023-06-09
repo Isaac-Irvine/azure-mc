@@ -57,6 +57,10 @@ resource container 'Microsoft.ContainerInstance/containerGroups@2023-05-01' = {
               name: 'AUTOSTOP_TIMEOUT_EST'
               value: '1800'
             }
+            {
+              name: 'MEMORY'
+              value: '2500M'
+            }
           ]
           ports: [
             {
@@ -116,9 +120,9 @@ resource container 'Microsoft.ContainerInstance/containerGroups@2023-05-01' = {
         name: 'data'
         azureFile: {
           shareName: storage.outputs.shareName
-          storageAccountName: storage.name
-          readOnly: false
+          storageAccountName: storageName
           storageAccountKey: storageAccount.listKeys().keys[0].value
+          readOnly: false
         }
       }
     ]

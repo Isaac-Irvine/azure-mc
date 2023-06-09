@@ -33,10 +33,9 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-09-01' = {
     properties: {
       protocolSettings: {
         smb: {
-          authenticationMethods: 'Kerberos;'
+          authenticationMethods: 'NTLMv2;'
           channelEncryption: 'AES-256-GCM;'
-          kerberosTicketEncryption: 'AES-256;'
-          versions: 'SMB3.1.1;'
+          versions: 'SMB3.0;SMB3.1.1;'
         }
       }
     }
